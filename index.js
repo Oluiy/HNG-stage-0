@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || '3000', 10);
 app.use((0, cors_1.default)());
 app.get('/', (req, res) => {
     const responseData = {
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
     };
     res.status(200).json(responseData);
 });
-app.listen({ port: PORT, localhost: '0.0.0.0' }, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`server is running on ${PORT}`);
     console.log(`go to http://localhost:${PORT}`);
 });
