@@ -1,8 +1,9 @@
-import express, {Request, Response} from 'express';
+// import express, {Request, Response} from 'express';
+import express, {Request, Response } from 'express';
 import cors from 'cors';
 
 const app = express();
-const PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -17,7 +18,7 @@ app.get('/', (req: Request, res: Response) => {
 );
 
 
-app.listen(PORT, () => {
+app.listen({port: PORT, localhost: '0.0.0.0'}, () => {
     console.log(`server is running on ${PORT}`);
     console.log(`go to http://localhost:${PORT}`);
 })
