@@ -39,6 +39,5 @@ Example response:
 ```
 
 ## backlink
-```bash
-https://hng.tech/hire/javascript-developers
-```
+
+https://hng.tech/hire/typescript-developers

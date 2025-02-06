@@ -1,6 +1,7 @@
 // import express, {Request, Response} from 'express';
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
+import {DateTime} from 'luxon';
 
 const app: Application = express();
 const PORT: number = parseInt(process.env.PORT || "8080", 10);
@@ -17,7 +18,7 @@ interface ResponseData {
 app.get("/", (req: Request, res: Response) => {
   const responseData: ResponseData = {
     email: "akinboyewaiyanuoluwa15@gmail.com",
-    current_datetime: new Date().toISOString(),
+    current_datetime: DateTime.utc().toFormat("yyyy-MM-dd'T'HH:mm:ss'Z'"),
     github_url: "https://github.com/Oluiy/HNG-stage-0",
   };
   res.status(200).json(responseData);
